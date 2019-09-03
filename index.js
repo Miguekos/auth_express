@@ -20,7 +20,7 @@ app.use(cookieSession({
 
 app.use(passport.initialize());
 app.use(passport.session());
-var whitelist = ['http://127.0.0.1:8080', 'http://localhost:8080', 'http://0.0.0.0:8080', 'http://172.105.17.123:3000', 'http://172.105.17.123']
+var whitelist = ['http://127.0.0.1:8080', 'http://localhost:8080', 'http://0.0.0.0:8080', 'http://172.105.17.123:3000', 'http://172.105.17.123', 'http://192.168.54.28:8080','http://192.168.55.218:8080']
 app.use(cors({
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
@@ -134,7 +134,7 @@ let users = [
     res.send({ user: user })
   })
 
-  app.listen(3000, () => {  
+  app.listen(3001, () => {  
     console.log("Example app listening on port 3000")
   })
 
